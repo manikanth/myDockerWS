@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  servicetwo:
+    image: ${DOCKER_REGISTRY-}servicetwo
+    container_name: servicetwo
+
+    build:
+      context: .
+      dockerfile: ServiceTwo/Dockerfile
+
+networks:
+    default:
+        external:
+            name: manikanth-container-network
